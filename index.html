@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRUDS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>CRUDS</h1>
+      <h3>Products management system</h3>
+      <hr>
+    </header>
+    <div class="inputs-container">
+      <input type="text" placeholder="Name" id="name"/>
+      <div class="inputs-c2">
+        <input type="number" placeholder="Price" id="price"/>
+        <input type="number" placeholder="Discount" id="discount"/>
+        <div>
+          <p>Total: <span id="total" value="hi" ></span></p>
+        </div>
+      </div>
+      <input type="number" id="p-number" placeholder="Number of the product"/>
+      <div class="errors">
+        
+      </div>
+      <input type="submit" placeholder="Create" id="submit"/>
+      <input type="submit" value="Delete all" id="deleteAll"/>
+    </div>
+    <div class="outputs-container">
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>PRICE</th>
+          <th>DISCOUNT</th>
+          <th>TOTAL</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tbody id="table">
+          
+        </tbody>
+      </table>
+      
+    </div>
+    
+    
+  </div>
+  
+  
+  
+  
+  
+  
+  <script src="main.js"></script>
+</body>
+</html>
