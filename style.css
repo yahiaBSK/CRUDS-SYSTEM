@@ -9,10 +9,8 @@ body {
   border-radius: 5px;
   box-shadow: 3px 3px 10px rgba(0,0,0,0.05);
   width: 90%;
-  margin: auto;
+  margin: 15px auto;
   padding: 15px;
-  margin-top: 15px;
-  margin-bottom: 15px;
 }
 header{
   margin-bottom: 50px;
@@ -31,11 +29,11 @@ header hr{
   width: 150px;
   border: none;
   background-color: #009D5C;
-  height: 2px;
+  height: 3px;
   border-radius: 100px;
 }
 
-.inputs-container input {
+.inputs-container input{
   width: 100%;
   height: 40px;
   border: none;
@@ -47,8 +45,9 @@ header hr{
   font-weight: 500;
   font-size: 13px;
   text-overflow: scroll;
-  text-indent: 15px;
   transition: 0.1s;
+  padding-left: 15px;
+  max-width: calc(100% - 17px);
 }
 
 .inputs-c2 {
@@ -63,20 +62,20 @@ header hr{
   margin-right: 10px;
   transition: 0.2s;
 }
-.inputs-c2 div{
-}
+
 .inputs-c2 div p{
   background-color: #F3F3F3;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 40px;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
   border-radius: 5px;
   width: 100px;
   font-size: 13px;
   overflow: scroll;
   transition: 0.5s;
+  transform: translateY(-2px) translateX(-1.5px)
 }
 .inputs-c2 div p span{
   font-weight: 600;
@@ -85,40 +84,66 @@ header hr{
   transition: 0.3s;
 }
 
-.inputs-container input[type=submit]{
+#submit{
   padding: 0;
   text-indent: 0;
   background-color: #009D5C;
   color: white;
   transition: 0.05s;
   border-radius: 100px;
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 40px;
+  margin-top: 7px;
+  font-weight: 500;
+  font-size: 13px;
+  padding-left: 20px;
   /*box-shadow: 1px 3px 3px rgba(0,0,0,0.30);*/
 }
 
 input[type=text]:focus, input[type=number]:focus{
-  box-shadow:0 0 0 2px rgba(0, 157, 92, 0.50);
+  box-shadow:0 0 0 2px #009D5C;
   transform: scale(1.03);
   background-color: white;
 }
-input[type=submit]:active{
-  opacity: 0.5;
+#submit:active{
+  background-color: white;
+  color: #009D5C;
   transform: none;
   box-shadow: none;
-  transform: scale(0.95);
- /* box-shadow: 0 0 0 3px #009D5c;*/
+  box-shadow: 0 0 0 2px #009D5C;
 }
 #deleteAll{
   background-color: #9E0000;
   display: none;
-}
-#deleteAll:active{
-  background-color: #9E0000;
-  opacity: 0.5;
   transform: none;
   box-shadow: none;
-  transform: scale(0.95);
+  border-radius: 100px;
+  width: 100%;
+  margin-top: 7px;
+  outline: none;
+  border: none;
+  height: 40px;
+  color: white;
+  font-weight: 500;
+  transition: 0.1s;
+  font-size: 13px;
+  padding-left: 30.2px;
 }
-
+#deleteAll i, #submit i{
+  font-size: 16px;
+  font-weight: 500;
+  position: absolute;
+  transform: translateX(-25px) translateY(1px);
+}
+#deleteAll:active{
+  background-color: white;
+  color: #9E0000;
+  transform: none;
+  box-shadow: none;
+  box-shadow: 0 0 0 2px #9E0000
+}
 
 .outputs-container{
   width: 100%;
@@ -146,39 +171,43 @@ table button{
   outline: none;
   border: none;
   border-radius: 100px;
-  width: 50px;
+  width: 50%;
   transition: 0.1s;
   padding: 3px;
   font-size: 14px;
 }
 
 #edit{
-  background-color: green;
-  color: white;
-  font-weight: 500;
-  transition: 0.1s;
-  
+  color: green;
+  font-size: 27px;
+  background-color: transparent;
+  transition: 0.3s;
+  width: auto;
+  padding: 6.3px 7px 3px 7px;
+  height: auto;
 }
 #delete{
-  background-color: #9E0000;;
-  color: white;
+  color: #9E0000;
+  font-size: 27px;
   font-weight: 500;
-  transition: 0.1s;
+  background-color: transparent;
+  transition: 0.2s;
+  padding: 6.3px 7px 3px 7px;
+  width: auto;
 }
 
 #delete:focus{
-  box-shadow: 0 0 0 1px #9E0000;;
-  transform: scale(0.91);
-  background-color: white;
-  color: #9E0000;;
+  box-shadow: 0 0 0 2px #9E0000;
+  transform: scale(0.80);
+  background-color: transparent;
+  
 }
 
 
 #edit:focus{
-  box-shadow: 0 0 0 1px green;
-  transform: scale(0.91);
-  background-color: white;
-  color: green;
+  box-shadow: 0 0 0 2px green;
+  transform: scale(0.80);
+  background-color: transparent;
 }
 
 
@@ -190,10 +219,121 @@ table button{
   display: flex;
   margin-top: 10px;
   margin-bottom: 3px;
+  transition: 0.4s;
   display: none;
-  text-indent: 15px;
+  opacity: 0;
+  visibility: hidden;
   font-weight: 500;
-  font-size: 15px;
-  line-height: 25px;
-  box-shadow: 0 0 0 2px #FFF2F2;
+  font-size: 14px;
+  line-height: 30px;
+}
+.errors ul{
+  list-style-type: none;
+  margin-left: -10px;
+}
+.errors i{
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  transform: translateY(1px)
+}
+.blurDiv{
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  transition: 0.2s;
+}
+
+
+.edit-container{
+  padding-top: 5px;
+  width: 350px;
+  position: fixed;
+  background-color: white;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%);
+  border-radius: 10px;
+  text-align: start;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.37);
+}
+.edit-container table{
+  background: transparent;
+  margin-left: 15px;
+}
+.edit-container input{
+  width: 190px;
+  text-align: start;
+  height: 35px;
+  border: none;
+  outline: none;
+  background-color: #E5E5E5;
+  border-radius: 5px;
+  transition: 0.2s;
+  padding-left: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.edit-container table td{
+  padding-bottom: 5px;
+  font-size: 17px;
+  font-weight: 500;
+}
+#total-2{
+  height: 28px;
+  width: 191px;
+  background-color: white;
+   background-color: #E5E5E5;
+  border-radius: 5px;
+  transition: 0.2s;
+  padding-left: 10px;
+  margin-left: 10px;
+  margin-top: -10px;
+  transform: translateY(10px);
+  padding-top: 10px;
+  font-weight: 700;
+}
+.edit-container button{
+  width: 290px;
+  border: none;
+  outline: none;
+  background-color: green;
+  border-radius: 100px;
+  height: 37px;
+  margin-left: 30px;
+  margin-bottom: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 0px;
+  color: white;
+  transition: 0.1s;
+}
+.edit-container button i{
+  margin-right: 5px;
+}
+#close{
+  background-color: white;
+  color: indianred;
+  font-size: 25px;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  border-radius: 100px;
+  transition: 0.1s;
+}
+#close:active{
+  transform: scale(0.70)
+}
+.edit-container button:active{
+  background-color: white;
+  box-shadow: 0 0 0 2px green;
+  color: green;
 }

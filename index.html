@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.0.0/css/pro.min.css" type="text/css">
   <title>CRUDS</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -25,10 +26,9 @@
       </div>
       <input type="number" id="p-number" placeholder="Number of the product"/>
       <div class="errors">
-        
       </div>
-      <input type="submit" placeholder="Create" id="submit"/>
-      <input type="submit" value="Delete all" id="deleteAll"/>
+      <button type="submit" placeholder="Create" id="submit"><i class="fa-duotone fa-circle-check"></i> Create</button>
+      <button type="submit" id="deleteAll"><i class="fa-duotone fa-circle-xmark"></i> Delete all</button>
     </div>
     <div class="outputs-container">
       <table>
@@ -47,10 +47,35 @@
       </table>
       
     </div>
+    <div class="blurDiv">
+      <div class="edit-container">
+        <i id="close" class="fa-duotone fa-circle-xmark"></i>
+        <table>
+          <tr>
+            <td>Name</td>
+            <td><input type="text" name="" id="editName" value="" /></td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td><input type="number" name="" id="editPrice" value="" /></td>
+          </tr>
+          <tr>
+            <td>Discount</td>
+            <td><input type="number" name="" id="editDiscount" value="" /></td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td><p id="total-2"></p></td>
+          </tr>
+        </table>
+        <button id="editDone"><i class="fa-duotone fa-pen-circle"></i> Edit</button>
+      </div>
+    </div>
+    
     
     
   </div>
-  
+
   
   
   
