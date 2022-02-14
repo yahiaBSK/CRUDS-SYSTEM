@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+
+
+
 body {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:  'Comfortaa', cursive;
   background-color: #F3F3F3;
 }
-
+*{
+  font-family:  'Comfortaa', cursive;
+}
 .container{
   background-color: white;
   border-radius: 5px;
@@ -158,13 +165,25 @@ table{
   overflow: scroll;
   background-color: rgba(0, 157, 92, 0.10);
   border-radius: 5px;
+  border-collapse: collapse;
 }
 
-table th{
+.outputs-container th{
   padding: 5px;
+  outline: none;
+  padding: 15px;
+  color: #009D5C;
+  border: none;
+  border-bottom: 2px solid #009D5C;
 }
-table td{
+.outputs-container td{
+  outline: none;
   padding-bottom: 5px;
+  padding-top: 5px;
+  border: none;
+}
+.outputs-container tr:nth-child(even){
+  background-color: rgba(0, 157, 92, 0.10);
 }
 table button{
   background-color: white;
@@ -229,7 +248,7 @@ table button{
 }
 .errors ul{
   list-style-type: none;
-  margin-left: -10px;
+  margin-left: -20px;
 }
 .errors i{
   margin-right: 10px;
@@ -281,6 +300,7 @@ table button{
   margin-left: 10px;
   font-size: 16px;
   font-weight: 500;
+  color: grey;
 }
 .edit-container table td{
   padding-bottom: 5px;
@@ -290,8 +310,7 @@ table button{
 #total-2{
   height: 28px;
   width: 191px;
-  background-color: white;
-   background-color: #E5E5E5;
+  background-color: #E5E5E5;
   border-radius: 5px;
   transition: 0.2s;
   padding-left: 10px;
@@ -300,17 +319,18 @@ table button{
   transform: translateY(10px);
   padding-top: 10px;
   font-weight: 700;
+  color: grey;
 }
 .edit-container button{
   width: 290px;
   border: none;
   outline: none;
-  background-color: green;
+  background-color: rgba(0, 157, 92, 1);
   border-radius: 100px;
   height: 37px;
   margin-left: 30px;
   margin-bottom: 25px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   margin-top: 0px;
   color: white;
@@ -318,6 +338,7 @@ table button{
 }
 .edit-container button i{
   margin-right: 5px;
+  font-size: 17px;
 }
 #close{
   background-color: white;
@@ -334,6 +355,7 @@ table button{
 }
 .edit-container button:active{
   background-color: white;
-  box-shadow: 0 0 0 2px green;
-  color: green;
+  box-shadow: 0 0 0 2px rgba(0, 157, 92, 1);
+  color: rgba(0, 157, 92, 1);
 }
+

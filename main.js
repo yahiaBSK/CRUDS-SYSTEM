@@ -7,6 +7,7 @@ let total = document.querySelector("#total")
 let submit = document.querySelector("#submit")
 let totalP = document.querySelector(".inputs-c2 p")
 let table = document.querySelector("#table")
+let tableTd = document.querySelector("#table td")
 let deleteBtn = document.querySelector("#delete")
 let deleteAll = document.querySelector("#deleteAll")
 let pNumber = document.querySelector("#p-number")
@@ -173,7 +174,7 @@ function dataOut(){
  let tbody = ''
   for (var i = 0; i < data.length; i++) {
   tbody += `<tr>
-              <td>${i+1}</td>
+              <td id="tableId">${i+1}</td>
               <td>${data[i].name}</td>
               <td>${data[i].price}</td>
               <td>${data[i].discount}</td>
@@ -181,7 +182,6 @@ function dataOut(){
               <td><button id="edit" onclick="edit(${i})"><i class="fa-duotone fa-pen-circle"></i></button></td>
               <td><button id="delete" onclick="deleteProduct(${i})"><i class="fa-duotone fa-circle-xmark"></i></button></td>
             </tr>`
-            var item = i
   }
   table.innerHTML = tbody
   if (data.length > 0) {
