@@ -12,14 +12,27 @@ let deleteBtn = document.querySelector("#delete")
 let deleteAll = document.querySelector("#deleteAll")
 let pNumber = document.querySelector("#p-number")
 let errorsDiv = document.querySelector(".errors")
-
 let editContainer = document.querySelector(".blurDiv")
+let editContainer2 = document.querySelector(".edit-container")
 let closeEdit = document.querySelector("#close")
 let editName= document.querySelector("#editName")
 let editPrice = document.querySelector("#editPrice")
 let editDiscount = document.querySelector("#editDiscount")
 let editDone = document.querySelector("#editDone")
 let editTotal = document.querySelector('#total-2')
+let openMenu = document.querySelector("#side-bar-icon")
+let menu = document.querySelector(".menu-container")
+let verified = document.querySelector(".fa-badge-check")
+let hr = document.querySelector("hr")
+let hr2 = document.querySelector("#hr2")
+let devImg = document.querySelector("#dev-img")
+let nameDiv = document.querySelector(".name-div")
+
+
+
+
+
+
 
 
 
@@ -198,7 +211,9 @@ dataOut()
 //edit product
 
 function edit(i){
-  setTimeout(()=>{editContainer.style = "visibility: visible; opacity: 1"},100)
+  setTimeout(()=>{editContainer.style = "visibility: visible; opacity: 1"
+    editContainer2.style = "opacity: 1"
+  },100)
     editName.value = data[i].name
     editPrice.value = data[i].price
     editDiscount.value = data[i].discount
@@ -236,6 +251,7 @@ editDone.addEventListener('click', () =>{
   }
   setTimeout(()=>{
     editContainer.style = "visibility: hidden; opacity: 0"
+    editContainer2.style = "opacity: 0"
   }, 200)
   dataOut()
 })
@@ -279,3 +295,32 @@ deleteAll.onclick = function(){setTimeout(()=>{deleteAllProducts()}, 250)}
 
 
 
+
+
+
+
+
+
+
+
+
+// open and close the menu
+
+openMenu.addEventListener('click', ()=>{
+  if (openMenu.classList == "fa-duotone fa-bars-staggered") {
+    openMenu.classList = "fa-solid fa-xmark"
+    menu.style = "visibility: visible; opacity: 1; height: 420px;"
+    let setT = setTimeout(()=>{
+      verified.style = "animation: verified 0.5s ease-in-out ; opacity: 1"
+      hr.style = "width: 20%"
+      hr2.style = "width: 20%"
+    },500)
+  }else{
+    openMenu.classList = "fa-duotone fa-bars-staggered"
+    menu.style = "none"
+    verified.style = "none"
+    hr.style = "none"
+    hr2.style = "none"
+    clearTimeout(setT)
+  }
+})
