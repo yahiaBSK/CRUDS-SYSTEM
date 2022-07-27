@@ -211,7 +211,7 @@ header hr{
   border-radius: 5px;
   width: 100px;
   font-size: 13px;
-  overflow: scroll;
+  overflow: hidden;
   transition: 0.5s;
   transform: translateY(-2px) translateX(-1.5px)
 }
